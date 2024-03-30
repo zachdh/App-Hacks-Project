@@ -1,0 +1,88 @@
+[gd_scene load_steps=13 format=3 uid="uid://ciyeqp6vtphri"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_3fx80"]
+[ext_resource type="Texture2D" uid="uid://da1s8qmx5ev68" path="res://beachboy.png" id="1_7045v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5qf5"]
+atlas = ExtResource("1_7045v")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aoq85"]
+atlas = ExtResource("1_7045v")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ulpg"]
+atlas = ExtResource("1_7045v")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cayvf"]
+atlas = ExtResource("1_7045v")
+region = Rect2(0, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kxkm"]
+atlas = ExtResource("1_7045v")
+region = Rect2(0, 512, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k50u3"]
+atlas = ExtResource("1_7045v")
+region = Rect2(0, 640, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8eke3"]
+atlas = ExtResource("1_7045v")
+region = Rect2(0, 768, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g825h"]
+atlas = ExtResource("1_7045v")
+region = Rect2(0, 896, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1jdc8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g5qf5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aoq85")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ulpg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cayvf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kxkm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k50u3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8eke3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g825h")
+}],
+"loop": true,
+"name": &"run",
+"speed": 15.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i3g11"]
+radius = 38.0
+height = 92.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+z_index = 1
+script = ExtResource("1_3fx80")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+rotation = -1.5708
+sprite_frames = SubResource("SpriteFrames_1jdc8")
+animation = &"run"
+frame_progress = 0.109068
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -5)
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_i3g11")
