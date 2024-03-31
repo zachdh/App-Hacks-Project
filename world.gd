@@ -10,12 +10,22 @@ const CAM_START_POS := Vector2i(960, 540)
 var score : float
 var speed : float
 var SPEED_MODIFIER : int = 10
-const START_SPEED : float = 1
+const START_SPEED : float = 2
 const MAX_SPEED : int = 4
 var screen_size : Vector2i
 var last_obs
 var game_running : bool = false
-var obs_spawn_pos = [Vector2i(1844, -1080), Vector2i(50, -1080)]
+var obs_spawn = [
+	{
+		"position" : Vector2i(1802, -1080), 
+		"rotation" : -90,
+		"flip-h" : true,
+	},
+	{
+		"position" : Vector2i(50, -1080),
+		"rotation" : 90,
+	}
+]
 
 
 # Called when the node enters the scene tree for the first time.
@@ -39,9 +49,14 @@ func generate_obs():
 		var obs
 		obs = obs_type.instantiate()
 		last_obs = obs
-		obs.position = obs_spawn_pos[randi() % obs_spawn_pos.size()]
+		var rand_spawn = obs_spawn[randi() % obs_spawn.size()]
+		obs.position = obs_spawn[rand_spawn]["position"]
+		obs.rotation_degrees = obs_spawn[0]["rotation"]
+		obs.get_node("Sprite2D").flip_h = obs_spawn[0]["flip-h"]
+		
 		add_child(obs)
 		obstacles.append(obs)
+		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
