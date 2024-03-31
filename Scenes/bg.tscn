@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://dxfab6ucofx6m" path="res://parallax_cloud4.png" id="4_ovs5f"]
 
 [node name="Bg" type="ParallaxBackground"]
-scale = Vector2(4.5, 4.5)
-transform = Transform2D(4.5, 0, 0, 4.5, 0, 0)
+scale = Vector2(7.5, 7.5)
+transform = Transform2D(7.5, 0, 0, 7.5, 0, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

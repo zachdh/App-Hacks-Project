@@ -1,12 +1,13 @@
 [gd_scene load_steps=2 format=3 uid="uid://d0hjnb27aif5m"]
 
-[ext_resource type="Texture2D" uid="uid://dyjy0wxlw68xg" path="res://palmtree.png" id="1_4c0q8"]
+[ext_resource type="Texture2D" uid="uid://dyjy0wxlw68xg" path="res://palmtree.png" id="1_i2tvn"]
 
 [node name="Palmtree" type="Area2D"]
+scale = Vector2(0.25, 0.25)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(4, 4)
-texture = ExtResource("1_4c0q8")
+texture = ExtResource("1_i2tvn")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(4, 4)
