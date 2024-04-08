@@ -8,15 +8,14 @@
 [node name="Bg" type="ParallaxBackground"]
 scale = Vector2(7.5, 7.5)
 transform = Transform2D(7.5, 0, 0, 7.5, 0, 0)
+scroll_base_scale = Vector2(0.2, 0.2)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, -50)
 texture = ExtResource("1_kpgll")
 centered = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
-position = Vector2(0, -50)
 motion_scale = Vector2(1, 0.6)
 motion_mirroring = Vector2(2.08165e-12, 256)
 
@@ -26,7 +25,6 @@ texture = ExtResource("2_dujy2")
 centered = false
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
-position = Vector2(0, -50)
 motion_scale = Vector2(1, 0.7)
 motion_mirroring = Vector2(2.08165e-12, 256)
 
@@ -36,7 +34,6 @@ texture = ExtResource("3_cy5ur")
 centered = false
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
-position = Vector2(0, -50)
 motion_scale = Vector2(1, 0.8)
 motion_mirroring = Vector2(2.08165e-12, 256)
 

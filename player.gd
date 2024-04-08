@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const GRAVITY : int = 4200
+const GRAVITY : int = 6000
 
 var direction : int = 1
 var jumps : int = 0
